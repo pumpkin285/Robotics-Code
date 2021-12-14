@@ -3,7 +3,7 @@
 #include "robot-config.h"
 
 
-double fourbarlimit = 600;
+double fourbarlimit = 750;
 double fourbarposition;
 void driverTasks::frontmogo(double fourbar, bool clawdown, bool clawup)
 {

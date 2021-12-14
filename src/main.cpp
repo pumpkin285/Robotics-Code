@@ -35,6 +35,7 @@ using namespace vex;
 int automodes;
 void initialize() {
   fc.set(true);
+  bc.set(true);
   resetposition();
   setbrake();
   vex::thread pscreen(printscreen);
@@ -45,7 +46,7 @@ void auton()
 {
   setbrake();
   resetposition();
-  autotask.mainauto(5);
+  autotask.mainauto(3);
 }
 void opcontrol()
 {
@@ -64,16 +65,18 @@ void opcontrol()
   
 }
 int main() {
+  vexcodeInit(); 
   
-  vexcodeInit();
   competition1.drivercontrol(opcontrol);
   competition1.autonomous(auton);
   
   initialize();
+  
   while(true)
   {
     wait(10, msec);
   }
+  
   /*
   while(true)
   {
@@ -102,6 +105,10 @@ int main() {
     {
       automodes = 5;
       break;
+    }
+    else if(Controller1.ButtonY.pressing())
+    {
+      automodes = 6;
     }
   }
   autotask.mainauto(automodes);

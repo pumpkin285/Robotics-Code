@@ -119,3 +119,31 @@ void autoTasks::backmogobutton(double speed)
   bml.stop();
   bmr.stop();
 }
+
+void autoTasks::mogoreset(double frontdeg, double backdeg)
+{
+  while(fb.position(deg) > frontdeg || bml.position(deg) > backdeg)
+  {
+    if(fb.position(deg) > frontdeg)
+    {
+      fb.spin(reverse, 100, pct);
+    }
+    else
+    {
+      fb.stop();
+    }
+    if(bml.position(deg) > backdeg)
+    {
+      bml.spin(reverse, 100, pct);
+      bmr.spin(reverse, 100, pct);
+    }
+    else
+    {
+      bml.stop();
+      bmr.stop();
+    }
+  }
+  bml.stop();
+  bmr.stop();
+  fb.stop();
+}

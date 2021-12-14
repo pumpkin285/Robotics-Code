@@ -41,9 +41,15 @@ class autoTasks {
 public:
   void drive(double distance, double maxvelocity, int direction, double maxtime);
 
+  void drivedoublemogo(double distance, double maxvelocity, int direction, double maxtime);
+
   void drivebackmogo(double distance, double maxvelocity, int direction, double maxtime, double startbackmogo, double backmogovalue, double backmogovelocity);
 
+  void drivefrontmogo(double distance, double maxvelocity, int direction, double maxtime, double startfrontmogo, double frontmogovalue, double frontmogovelocity);
+
   void gyroturn(double targetangle, double maxvelocity, int direction, double maxtime);
+
+  void gyroturnmogo(double targetangle, double maxvelocity, int direction, double maxtime);
 
   void gyroturnback(double targetangle, double maxvelocity, int direction, double maxtime, double backmogovalue, double backmogovelocity);
 
@@ -54,6 +60,8 @@ public:
   void backmogopick();
 
   void backmogorelease();
+
+  void mogoreset(double frontdeg, double backdeg);
 
   void mainauto(int automode);
 
@@ -72,6 +80,8 @@ public:
   void downauto();
 
   void awpauto();
+
+  void middleauto();
 
   void skills();
   
